@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>INM320 Assignment 6: Bootstrap</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@3.0.0/reset.min.css" />
+  <link rel='stylesheet'
+    href='//fonts.googleapis.com/css?family=Quando:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic%7CJosefin+Sans:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic'
+    type='text/css' media='all' />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <script src="https://kit.fontawesome.com/2216cb6a92.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- Modal 1-->
+  <div class="modal fade" id="sideBarModal" tabindex="-1" aria-labelledby="sideBarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="sideBarModalLabel">I am a Bootstrap Modal!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          The sidebar unfortunantly does not take you anywhere at the moment. CLicking any of it;s buttons will bring this up. <br>
+          Only the "Overview" page is currently available. <br>
+          Try using the search and notification buttons instead.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 2 -->
+  <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="errorModalLabel">Oops Sorry!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          The feature you are trying to use is currently unavailable.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Actual body -->
+  <div class="container-fluid">
+    <div class="row equal">
+      <!-- Sidebar -->
+      <div class="sidebar d-flex flex-column flex-shrink-0 text-bg-dark p-3 col-2">
+        <div class="d-flex align-items-center mb-3 mb- me-md-auto text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#sideBarModal">
+          <i class="me-3 bi bi-house"></i>
+          <span class="fs-4">CLICK ME!!!</span>
+        </div>
+        <ul class="nav nav-pills flex-column mb-auto" data-bs-toggle="modal" data-bs-target="#sideBarModal">
+          <li class="nav-item p-3">
+            <i class="me-2 bi bi-pie-chart"></i>
+            Overview
+          </li>
+          <li class="nav-item p-3">
+            <i class="me-2 bi bi-ticket-detailed"></i>
+            Tickets
+          </li>
+          <li class="nav-item p-3">
+            <i class="me-2 bi bi-lightbulb"></i>
+            Ideas
+          </li>
+          <li class="nav-item p-3">
+            <i class="me-2 bi bi-person-lines-fill"></i>
+            Contacts
+          </li>
+          <li class="nav-item p-3">
+            <i class="me-2 bi bi-person-circle"></i>
+            Agents
+          </li>
+          <li class="nav-item p-3">
+            <i class="me-2 bi bi-journal"></i>
+            Articles
+          </li>
+          <hr>
+          <li class="nav-item p-3">
+            <i class="me-2 bi bi-gear"></i>
+            Settings
+          </li>
+          <li class="nav-item p-3">
+            <i class="me-2 bi bi-award"></i>
+            Subscription
+          </li>
+        </ul>
+      </div>
+      <!-- Main screen -->
+      <div class="main d-flex flex-column col-10 px-4">
+        <!-- header -->
+        <div class="row align-items-end my-3">
+          <div class="col-2 fs-3">Overview</div>
+          <div class="col-10 text-end fs-6">
+            <i class="me-2 bi bi-search" data-bs-toggle="modal" data-bs-target="#errorModal"></i>
+            <i class="me-2 bi bi-bell" data-bs-toggle="modal" data-bs-target="#errorModal"></i>
+            <a href="https://github.com/swarnima-shetti/Bootstrap-Assignment"><i class="me-2 bi bi-github"></i></a>
+            
+            Jones Ferdinand
+          </div>
+        </div>
+        <!-- Top cards -->
+        <div class="row text-center my-3 topCards">
+          <div class="col-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-title text-secondary">Unresolved</div>
+                <h2 class="card-text fw-bold">60</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-title text-secondary">Overdue</div>
+                <h2 class="card-text fw-bold">16</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-title text-secondary">Open</div>
+                <h2 class="card-text fw-bold">43</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-title text-secondary">On hold</div>
+                <h2 class="card-text fw-bold">64</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Chart card -->
+        <div class="row my-3 cardRow">
+          <div class="col">
+            <div class="card">
+              <div class="row g-0">
+                <div class="col-md-7">
+                  <canvas id="chart"></canvas>
+                </div>
+                <div class="col-md-5">
+                  <div class="card-body"></div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item py-3 text-center border-start">
+                      <div class="text-secondary">Resolve</div>
+                      <div class="fw-bold">449</div>
+                    </li>
+                    <li class="list-group-item py-3 text-center border-start">
+                      <div class="text-secondary">Received</div>
+                      <div class="fw-bold">426</div>
+                    </li>
+                    <li class="list-group-item py-3 text-center border-start">
+                      <div class="text-secondary">Average first response time</div>
+                      <div class="fw-bold">33m</div>
+                    </li>
+                    <li class="list-group-item py-3 text-center border-start">
+                      <div class="text-secondary">Average response time</div>
+                      <div class="fw-bold">3h 8m</div>
+                    </li>
+                    <li class="list-group-item py-3 text-center border-start">
+                      <div class="text-secondary">Resolution with SLA</div>
+                      <div class="fw-bold">94%</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom two cards -->
+        <div class="row my-3 bottomCards">
+          <div class="col-6">
+            <!-- First card -->
+            <div class="card">
+              <div class="card-body py-4">
+                <h5 class="card-title">Unresolved tickets</h5>
+                <div class="card-text "><span class="text-secondary">Group: </span>Support </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item py-3">
+                  <div class="row">
+                    <div class="col-6 fw-semibold">Waiting on Feature Request</div>
+                    <div class="col-6 text-end text-secondary">2342</div>
+                  </div>
+                </li>
+                <li class="list-group-item py-3">
+                  <div class="row">
+                    <div class="col-6 fw-semibold">Awaiting Customer Response</div>
+                    <div class="col-6 text-end text-secondary">1005</div>
+                  </div>
+                </li>
+                <li class="list-group-item py-3">
+                  <div class="row">
+                    <div class="col-6 fw-semibold">Awaiting Developer Fix</div>
+                    <div class="col-6 text-end text-secondary">914</div>
+                  </div>
+                </li>
+                <li class="list-group-item py-3">
+                  <div class="row">
+                    <div class="col-6 fw-semibold">Pending</div>
+                    <div class="col-6 text-end text-secondary">281</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="col-6">
+            <!-- Second card -->
+            <div class="card">
+              <div class="card-body py-4">
+                <h5 class="card-title">Tasks</h5>
+                <div class="card-text "><span class="text-secondary">Today</span></div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item py-3">
+                  <div class="row">
+                    <div class="col-6 fw-semibold">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label ms-3" for="flexCheckDefault">
+                          Default checkbox
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-6 text-end">
+                      <span class="rounded bg-warning text-white py-1 px-3">Urgent</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item py-3">
+                  <div class="row">
+                    <div class="col-6 fw-semibold">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label ms-3" for="flexCheckDefault">
+                          Default checkbox
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-6 text-end">
+                      <span class="rounded bg-success text-white py-1 px-3">New</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item py-3">
+                  <div class="row">
+                    <div class="col-6 fw-semibold">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label ms-3" for="flexCheckDefault">
+                          Default checkbox
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-6 text-end">
+                      <span class="rounded bg-danger text-white py-1 px-3">Error</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-item py-3">
+                  <div class="row">
+                    <div class="col-6 fw-semibold">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label ms-3" for="flexCheckDefault">
+                          Default checkbox
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-6 text-end">
+                      <span class="rounded bg-secondary text-white py-1 px-3">Default</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+<script src="./chart.js"></script>
+</html>
